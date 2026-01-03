@@ -1,0 +1,167 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== BODY ANIMATED BACKGROUND ===== */
+body {
+  min-height: 100vh;
+  background: linear-gradient(270deg, #1d2671, #c33764, #43cea2, #185a9d);
+  background-size: 800% 800%;
+  animation: bgMove 12s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+/* ===== INFORMATION CARD ===== */
+.information {
+  width: 280px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 25px;
+  color: #fff;
+  animation: slideLeft 1s ease;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.information h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.information input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+/* ===== CALCULATOR BOX ===== */
+.box {
+  width: 320px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 25px;
+  color: #fff;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+  animation: scaleIn 1s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.box p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* ===== INPUTS ===== */
+.box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.box input:focus {
+  outline: 2px solid #fff;
+}
+
+/* ===== BUTTON GROUP ===== */
+.box div {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+/* Individual Buttons */
+.mutiply { background: linear-gradient(to right, #00c6ff, #0072ff); }
+.divide { background: linear-gradient(to right, #f7971e, #ffd200); }
+.aditon { background: linear-gradient(to right, #56ab2f, #a8e063); }
+.subtaction { background: linear-gradient(to right, #ff416c, #ff4b2b); }
+
+button:hover {
+  transform: translateY(-6px) rotate(5deg) scale(1.1);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== RESULT AREA ===== */
+.show-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.2);
+  text-align: center;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(255,255,255,0.9);
+  }
+}
+
+#result {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffeb3b;
+  margin-top: 5px;
+}
