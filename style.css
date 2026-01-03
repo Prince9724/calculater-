@@ -165,3 +165,79 @@ button:hover {
   color: #ffeb3b;
   margin-top: 5px;
 }
+/* ===== BODY ANIMATED BACKGROUND (UPGRADED) ===== */
+body {
+  min-height: 100vh;
+  background: #0f2027;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== MAIN GRADIENT LAYER ===== */
+body::before {
+  content: "";
+  position: absolute;
+  inset: -200px;
+  background: linear-gradient(
+    120deg,
+    #1d2671,
+    #c33764,
+    #43cea2,
+    #185a9d
+  );
+  background-size: 300% 300%;
+  animation: slowGradient 18s ease-in-out infinite;
+  filter: blur(120px);
+  opacity: 0.85;
+}
+
+/* ===== SOFT LIGHT LAYER ===== */
+body::after {
+  content: "";
+  position: absolute;
+  inset: -250px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255,255,255,0.18),
+    transparent 65%
+  );
+  animation: lightMove 10s ease-in-out infinite alternate;
+}
+
+/* ===== BACKGROUND ANIMATIONS ===== */
+@keyframes slowGradient {
+  0% {
+    background-position: 0% 50%;
+    transform: rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: rotate(180deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lightMove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(80px, 60px);
+  }
+}
+.container {
+    display: flex;
+    flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+.h1{
+    text-align: center;
+    color: white;
+}
