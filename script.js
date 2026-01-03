@@ -9,6 +9,20 @@ const subtraction_button_input = document.getElementById("subtraction");
 
 const result = document.getElementById("result");
 
+
+number1_input.setAttribute("inputmode", "numeric");
+number1_input.setAttribute("pattern", "[0-9]*");
+
+number2_input.setAttribute("inputmode", "numeric");
+number2_input.setAttribute("pattern", "[0-9]*");
+const onlyNumber = (e) => {
+    e.target.value = e.target.value.replace(/[^0-9.]/g, "");
+};
+
+number1_input.addEventListener("input", onlyNumber);
+number2_input.addEventListener("input", onlyNumber);
+
+
 const multiplication = () => {
     let num1 = Number(number1_input.value);
     let num2 = Number(number2_input.value);
